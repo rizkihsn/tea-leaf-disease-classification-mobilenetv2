@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block title %}Disease Information - Tea Leaf AI{% endblock %}
+
+{% block content %}
+<div class="container py-5">
+    <div class="text-center mb-5">
+        <h2 class="fw-bold text-tea-dark">Informasi Penyakit Daun Teh</h2>
+        <p class="text-muted">Kenali lebih dekat berbagai jenis penyakit yang dapat menyerang tanaman teh Anda.</p>
+        <div class="divider mx-auto bg-tea-green mt-3"></div>
+    </div>
+
+    <div class="accordion shadow-sm rounded-4" id="diseaseAccordion">
+        {% for name, info in diseases.items() %}
+        <div class="accordion-item border-0 border-bottom">
+            <h2 class="accordion-header" id="heading-{{ loop.index }}">
+                <button class="accordion-button {% if not loop.first %}collapsed{% endif %} fw-bold fs-5 text-tea-dark" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-{{ loop.index }}" aria-expanded="{% if loop.first %}true{% else %}false{% endif %}" aria-controls="collapse-{{ loop.index }}">
+                    {{ name }}
+                </button>
+            </h2>
+            <div id="collapse-{{ loop.index }}" class="accordion-collapse collapse {% if loop.first %}show{% endif %}" aria-labelledby="heading-{{ loop.index }}" data-bs-parent="#diseaseAccordion">
+                <div class="accordion-body p-4 bg-light">
+                    <div class="mb-3">
+                        <h6 class="fw-bold text-tea-green mb-1"><i class="fa-solid fa-file-medical me-2"></i>Deskripsi</h6>
+                        <p class="text-muted mb-0">{{ info.deskripsi }}</p>
+                    </div>
+                    <div class="mb-3">
+                        <h6 class="fw-bold text-danger mb-1"><i class="fa-solid fa-bug me-2"></i>Penyebab</h6>
+                        <p class="text-muted mb-0">{{ info.penyebab }}</p>
+                    </div>
+                    <div>
+                        <h6 class="fw-bold text-primary mb-1"><i class="fa-solid fa-kit-medical me-2"></i>Saran Penanganan</h6>
+                        <p class="text-muted mb-0">{{ info.saran }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

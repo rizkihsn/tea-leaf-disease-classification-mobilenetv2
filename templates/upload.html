@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block title %}Upload - Tea Leaf AI{% endblock %}
+
+{% block content %}
+<div class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-6 col-md-8">
+            <div class="card border-0 shadow-lg rounded-4 text-center p-4">
+                <div class="card-body">
+                    <div class="mb-4 text-tea-green">
+                        <i class="fa-solid fa-cloud-arrow-up fa-4x mb-3"></i>
+                        <h3 class="fw-bold text-tea-dark">Unggah Gambar Daun Teh</h3>
+                        <p class="text-muted small">Format didukung: JPG, JPEG, PNG</p>
+                    </div>
+                    
+                    <form action="{{ url_for('predict') }}" method="POST" enctype="multipart/form-data" id="uploadForm">
+                        <div class="upload-area border-2 border-dashed border-tea rounded-4 p-5 mb-4 position-relative bg-light custom-file-upload transition-all cursor-pointer">
+                            <input type="file" name="file" id="fileInput" class="position-absolute w-100 h-100 opacity-0 cursor-pointer" accept=".png, .jpg, .jpeg" required>
+                            <div id="uploadText">
+                                <i class="fa-solid fa-image fa-2x text-secondary mb-2"></i>
+                                <h5 class="text-secondary mb-0">Klik atau Seret Gambar Kesini</h5>
+                            </div>
+                            <div id="imagePreviewContainer" class="d-none">
+                                <img id="imagePreview" src="" alt="Preview" class="img-fluid rounded-3 max-h-200">
+                                <p class="text-muted small mt-2 mb-0" id="fileNameDisplay"></p>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="btn btn-tea-green w-100 py-3 rounded-pill fw-bold text-white fs-5 hover-shadow" id="predictBtn">
+                            <i class="fa-solid fa-wand-magic-sparkles me-2"></i>Prediksi Sekarang
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,88 @@
+{% extends "base.html" %}
+
+{% block title %}Home - Tea Leaf AI{% endblock %}
+
+{% block content %}
+<div class="hero-section text-center text-white d-flex align-items-center justify-content-center">
+    <div class="hero-overlay"></div>
+    <div class="container hero-content z-index-2">
+        <h1 class="display-3 fw-bold mb-4 slide-in-up">Klasifikasi Penyakit Daun Teh Berbasis AI</h1>
+        <p class="lead mb-5 slide-in-up-delay">Deteksi dini penyakit pada tanaman teh Anda menggunakan teknologi Transfer Learning MobileNetV2 dengan akurasi tinggi.</p>
+        <a href="{{ url_for('upload_form') }}" class="btn btn-light btn-lg text-tea-green px-5 py-3 rounded-pill fw-bold hover-scale shadow-lg slide-in-up-delay-2">Mulai Prediksi <i class="fa-solid fa-arrow-right ms-2"></i></a>
+    </div>
+</div>
+
+<div class="container py-5 mt-5">
+    <div class="row text-center mb-5">
+        <div class="col-12">
+            <h2 class="fw-bold text-tea-dark">Keunggulan AI Kami</h2>
+            <div class="divider mx-auto bg-tea-green mt-3 mb-4"></div>
+        </div>
+    </div>
+    
+    <div class="row g-4">
+        <div class="col-md-4">
+            <div class="card h-100 border-0 shadow-sm feature-card p-4 rounded-4 text-center">
+                <div class="card-body">
+                    <div class="icon-circle bg-tea-light text-tea-green mx-auto mb-4">
+                        <i class="fa-solid fa-bolt fa-2x"></i>
+                    </div>
+                    <h5 class="card-title fw-bold">Cepat & Akurat</h5>
+                    <p class="card-text text-muted">Ditenagai oleh MobileNetV2, memberikan hasil prediksi dalam hitungan detik dengan akurasi yang dioptimalkan melalui fine-tuning.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card h-100 border-0 shadow-sm feature-card p-4 rounded-4 text-center">
+                <div class="card-body">
+                    <div class="icon-circle bg-tea-light text-tea-green mx-auto mb-4">
+                        <i class="fa-solid fa-mobile-screen-button fa-2x"></i>
+                    </div>
+                    <h5 class="card-title fw-bold">Desain Responsif</h5>
+                    <p class="card-text text-muted">Akses dari perangkat apa pun (Mobile, Tablet, Desktop) dengan antarmuka yang bersih, modern, dan mudah digunakan.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card h-100 border-0 shadow-sm feature-card p-4 rounded-4 text-center">
+                <div class="card-body">
+                    <div class="icon-circle bg-tea-light text-tea-green mx-auto mb-4">
+                        <i class="fa-solid fa-book-medical fa-2x"></i>
+                    </div>
+                    <h5 class="card-title fw-bold">Solusi Lengkap</h5>
+                    <p class="card-text text-muted">Tidak hanya mendeteksi kelas penyakit, tetapi juga memberikan informasi mendalam dan saran penanganan yang tepat sasaran.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- How it works section -->
+<div class="bg-light py-5">
+    <div class="container py-4">
+        <h2 class="text-center fw-bold text-tea-dark mb-5">Cara Penggunaan</h2>
+        <div class="row text-center g-4">
+            <div class="col-md-3">
+                <div class="step-number display-4 fw-bold text-tea-light mb-3">1</div>
+                <h5 class="fw-bold">Siapkan Gambar</h5>
+                <p class="text-muted small">Ambil foto daun teh yang ingin Anda periksa. Pastikan pencahayaan cukup.</p>
+            </div>
+            <div class="col-md-3">
+                <div class="step-number display-4 fw-bold text-tea-light mb-3">2</div>
+                <h5 class="fw-bold">Unggah</h5>
+                <p class="text-muted small">Masuk ke halaman Prediksi, lalu unggah gambar (format png/jpg/jpeg).</p>
+            </div>
+            <div class="col-md-3">
+                <div class="step-number display-4 fw-bold text-tea-light mb-3">3</div>
+                <h5 class="fw-bold">Proses AI</h5>
+                <p class="text-muted small">Sistem AI kami akan mengekstrak fitur dan memprediksi penyakit secara otomatis.</p>
+            </div>
+            <div class="col-md-3">
+                <div class="step-number display-4 fw-bold text-tea-light mb-3">4</div>
+                <h5 class="fw-bold">Dapatkan Hasil</h5>
+                <p class="text-muted small">Lihat jenis penyakit, persentase keyakinan, beserta saran penanganannya.</p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

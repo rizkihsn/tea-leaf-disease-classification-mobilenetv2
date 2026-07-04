@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+
+{% block title %}About - Tea Leaf AI{% endblock %}
+
+{% block content %}
+<div class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-8">
+            <div class="card border-0 shadow-lg rounded-4 overflow-hidden">
+                <div class="card-header bg-tea-green text-white py-4 text-center">
+                    <h2 class="mb-0 fw-bold"><i class="fa-solid fa-circle-info me-2"></i>Tentang Proyek</h2>
+                </div>
+                <div class="card-body p-5">
+                    <h4 class="fw-bold text-tea-dark mb-3">Latar Belakang</h4>
+                    <p class="text-muted lh-lg">
+                        Proyek ini dikembangkan sebagai bagian dari pemenuhan tugas kuliah Computer Vision / Artificial Intelligence. 
+                        Fokus utama proyek ini adalah menerapkan arsitektur *Deep Learning* modern untuk menyelesaikan masalah dunia nyata, 
+                        yaitu klasifikasi penyakit pada daun teh.
+                    </p>
+
+                    <h4 class="fw-bold text-tea-dark mt-5 mb-3">Metodologi (Transfer Learning)</h4>
+                    <p class="text-muted lh-lg">
+                        Kami menggunakan arsitektur <strong>MobileNetV2</strong>, sebuah model CNN yang ringan namun sangat efisien, yang telah di-*pre-train* pada jutaan gambar dari dataset ImageNet. 
+                        Melalui teknik <em>Transfer Learning</em>, bobot (weights) dasar dari model dipertahankan, sementara layer klasifikasi di bagian ujung disesuaikan untuk mengenali 6 kelas daun teh:
+                    </p>
+                    <ul class="text-muted mb-4">
+                        <li>Algal Spot</li>
+                        <li>Brown Blight</li>
+                        <li>Gray Blight</li>
+                        <li>Healthy</li>
+                        <li>Helopeltis</li>
+                        <li>Red Spot</li>
+                    </ul>
+                    <p class="text-muted lh-lg">
+                        Selanjutnya, kami melakukan <em>Fine Tuning</em> dengan membuka sebagian layer teratas MobileNetV2 dan melatih ulang dengan <em>learning rate</em> kecil agar fitur ekstraktor dapat beradaptasi lebih spesifik terhadap tekstur penyakit daun teh.
+                    </p>
+
+                    <h4 class="fw-bold text-tea-dark mt-5 mb-3">Teknologi yang Digunakan</h4>
+                    <div class="d-flex flex-wrap gap-2 mt-3">
+                        <span class="badge bg-primary fs-6 py-2 px-3"><i class="fa-brands fa-python me-2"></i>Python</span>
+                        <span class="badge bg-secondary fs-6 py-2 px-3"><i class="fa-solid fa-brain me-2"></i>TensorFlow / Keras</span>
+                        <span class="badge bg-dark fs-6 py-2 px-3"><i class="fa-solid fa-server me-2"></i>Flask</span>
+                        <span class="badge bg-success fs-6 py-2 px-3"><i class="fa-brands fa-bootstrap me-2"></i>Bootstrap 5</span>
+                        <span class="badge bg-info text-dark fs-6 py-2 px-3"><i class="fa-solid fa-database me-2"></i>SQLite</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
