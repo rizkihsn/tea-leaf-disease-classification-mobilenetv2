@@ -125,7 +125,7 @@ def predict():
                                    confidence=round(confidence, 2),
                                    info=info)
         else:
-            flash('Terjadi kesalahan saat memproses gambar. Pastikan model sudah ditraining.')
+            flash(f'Terjadi kesalahan saat memproses gambar: {confidence}')
             return redirect(url_for('upload_form'))
             
     else:

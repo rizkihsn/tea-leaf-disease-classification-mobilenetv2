@@ -4,7 +4,8 @@ from tensorflow.keras.models import load_model
 from tensorflow.keras.preprocessing.image import load_img, img_to_array
 
 # Define model path
-MODEL_PATH = 'model/tea_leaf_mobilenetv2.keras'
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+MODEL_PATH = os.path.join(BASE_DIR, 'model', 'tea_leaf_mobilenetv2.keras')
 
 # Define class labels (Alphabetical order based on flow_from_directory)
 CLASS_LABELS = {
@@ -52,5 +53,6 @@ def predict_image(image_path):
         return disease_name, confidence
 
     except Exception as e:
-        print(f"Error during prediction: {e}")
-        return None, 0.0
+        error_msg = str(e)
+        print(f"Error during prediction: {error_msg}")
+        return False, error_msg
