@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,6 +14,7 @@
     <!-- FontAwesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
+
 <body>
 
     <!-- Navbar -->
@@ -21,25 +23,31 @@
             <a class="navbar-brand fw-bold" href="{{ url_for('index') }}">
                 <i class="fa-solid fa-leaf text-white me-2"></i>TeaLeaf AI
             </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link {% if request.endpoint == 'index' %}active{% endif %}" href="{{ url_for('index') }}">Home</a>
+                        <a class="nav-link {% if request.endpoint == 'index' %}active{% endif %}"
+                            href="{{ url_for('index') }}">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link {% if request.endpoint == 'about' %}active{% endif %}" href="{{ url_for('about') }}">About Project</a>
+                        <a class="nav-link {% if request.endpoint == 'about' %}active{% endif %}"
+                            href="{{ url_for('about') }}">About Project</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link {% if request.endpoint == 'disease' %}active{% endif %}" href="{{ url_for('disease') }}">Disease Info</a>
+                        <a class="nav-link {% if request.endpoint == 'disease' %}active{% endif %}"
+                            href="{{ url_for('disease') }}">Disease Info</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link {% if request.endpoint == 'upload_form' %}active{% endif %}" href="{{ url_for('upload_form') }}">Prediction</a>
+                        <a class="nav-link {% if request.endpoint == 'upload_form' %}active{% endif %}"
+                            href="{{ url_for('upload_form') }}">Prediction</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link {% if request.endpoint == 'history' %}active{% endif %}" href="{{ url_for('history') }}">History</a>
+                        <a class="nav-link {% if request.endpoint == 'history' %}active{% endif %}"
+                            href="{{ url_for('history') }}">History</a>
                     </li>
                 </ul>
             </div>
@@ -47,18 +55,18 @@
     </nav>
 
     <!-- Flash Messages -->
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
     <div class="container mt-3">
-        {% with messages = get_flashed_messages() %}
-          {% if messages %}
-            {% for message in messages %}
-              <div class="alert alert-warning alert-dismissible fade show" role="alert">
-                {{ message }}
-                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-              </div>
-            {% endfor %}
-          {% endif %}
-        {% endwith %}
+        {% for message in messages %}
+        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+            {{ message }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+        </div>
+        {% endfor %}
     </div>
+    {% endif %}
+    {% endwith %}
 
     <!-- Main Content -->
     <main class="content-wrapper min-vh-100">
@@ -77,4 +85,5 @@
     <!-- Custom JS -->
     <script src="{{ url_for('static', filename='js/script.js') }}"></script>
 </body>
+
 </html>
