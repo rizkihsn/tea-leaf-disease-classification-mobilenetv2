@@ -9,38 +9,6 @@ Proyek ini adalah implementasi *Transfer Learning* menggunakan arsitektur **Mobi
 4. **Riwayat Prediksi**: Menyimpan riwayat hasil prediksi menggunakan *database* SQLite.
 5. **Informasi Penyakit**: Halaman khusus untuk mengetahui detail setiap penyakit dan cara penanganannya.
 
-## Struktur Direktori
-```
-project/
-│
-├── app.py                     # File utama aplikasi Flask
-├── train.py                   # Skrip untuk melatih model MobileNetV2
-├── predict.py                 # Skrip penolong untuk memuat model dan memprediksi
-├── requirements.txt           # Daftar library Python yang dibutuhkan
-├── runtime.txt                # Versi Python untuk deployment
-├── Procfile                   # Konfigurasi deployment (Gunicorn)
-├── README.md                  # Dokumentasi proyek
-│
-├── dataset/                   # Folder dataset (pastikan terdapat subfolder Tea_Leaf_Disease)
-├── model/                     # Tempat menyimpan model terlatih (.keras)
-├── uploads/                   # Tempat sementara menyimpan gambar yang diunggah pengguna
-│
-├── templates/                 # File HTML (Frontend)
-│   ├── base.html
-│   ├── index.html
-│   ├── about.html
-│   ├── upload.html
-│   ├── result.html
-│   ├── history.html
-│   └── disease.html
-│
-└── static/                    # File CSS, JavaScript, dan Gambar Statis
-    ├── css/
-    │   └── style.css
-    └── js/
-        └── script.js
-```
-
 ## Dataset
 Dataset yang digunakan terdiri dari 5867 gambar dengan kelas berikut:
 - `algal_spot` (1000 gambar)
