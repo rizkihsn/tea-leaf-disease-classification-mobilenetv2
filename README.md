@@ -53,6 +53,7 @@ Setelah model terlatih atau file `tea_leaf_mobilenetv2.keras` tersedia di folder
    python app.py
    ```
 2. Buka *browser* dan akses URL yang diberikan, biasanya: `http://127.0.0.1:5000/`.
+3. Bisa di jalankan melalui online Buka *browser* dan akses URL ini https://web-production-4cd3a.up.railway.app/ 
 
 ## Deployment
 Proyek ini sudah dilengkapi dengan `requirements.txt`, `runtime.txt`, dan `Procfile`.
